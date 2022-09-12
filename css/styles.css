@@ -26,16 +26,18 @@
   --primary-text-color: #212121;
   --secondary-text-color: #757575;
   --contacts-color: rgba(255, 255, 255, 0.6);
+  --soc-media-color: #afb1b8;
 
   --black-color: #000000;
   --white-color: #ffffff;
   --blue-color: #2196f3;
 
-  --primary-background-color: #ffffff;
-  --secondary-background-color: #f5f4fa;
+  --light-grey-color: #f5f5f5;
+  --primary-background-color: #f5f4fa;
   --dark-grey-color: #2f303a;
   --header-border-color: #ececec;
   --portfolio-border-color: #eeeeee;
+  --grey-circle-bg-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Налаштування основних позицій */
@@ -93,6 +95,15 @@ img {
   overflow: hidden;
 }
 
+.navigation.container,
+.main-navigation,
+.flex-schedule,
+.contacts-wrapper,
+.navigation-contacts,
+.clients {
+  display: flex;
+}
+
 /* Налаштування логотипу */
 
 .logo {
@@ -116,25 +127,18 @@ img {
   color: var(--white-color);
 }
 
+.logo.upper {
+  padding-top: 24px;
+  padding-bottom: 25px;
+  margin-right: 93px;
+}
+
 /* Налаштування <header> */
 
 .header {
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: var(--header-border-color);
-}
-
-.navigation.container,
-.main-navigation,
-.flex-schedule,
-.contacts-wrapper {
-  display: flex;
-}
-
-.logo.upper {
-  padding-top: 24px;
-  padding-bottom: 25px;
-  margin-right: 93px;
 }
 
 .navigation-item:not(:last-child) {
@@ -169,15 +173,20 @@ img {
 }
 
 .navigation-contacts {
-  display: block;
+  align-items: center;
   padding-top: 32px;
   padding-bottom: 32px;
 
   color: var(--secondary-text-color);
+  fill: var(--secondary-text-color);
 }
 
 .navigation-contacts:not(:last-child) {
   margin-right: 50px;
+}
+
+.contacts-icon {
+  margin-right: 10px;
 }
 
 .navigation-link:hover,
@@ -187,6 +196,7 @@ img {
 .address:hover,
 .address:focus {
   color: var(--blue-color);
+  fill: var(--blue-color);
 }
 
 /* Налаштування <footer> */
@@ -196,6 +206,10 @@ img {
   padding-bottom: 60px;
 
   background-color: var(--dark-grey-color);
+}
+
+.address-info {
+  margin-right: 70px;
 }
 
 .logo.lower {
@@ -219,6 +233,58 @@ img {
   color: var(--contacts-color);
 }
 
+.social-media {
+  padding-top: 12px;
+}
+
+.media-title {
+  margin-bottom: 20px;
+
+  font-weight: var(--bold-font-weight);
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: var(--white-color);
+}
+
+/* Налаштування іконок соціальних мереж */
+
+.media-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.media-link {
+  display: block;
+  width: 44px;
+  height: 44px;
+  padding: 12px;
+  border-radius: 50%;
+
+  color: var(--soc-media-color);
+}
+
+.media-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.grey-circle {
+  background-color: var(--grey-circle-bg-color);
+}
+
+.media-link:hover,
+.media-link:focus {
+  background-color: var(--blue-color);
+  color: var(--white-color);
+}
+
+.footer-media {
+  fill: var(--white-color);
+}
+
 /* Налаштування <main> для index.html */
 
 /* Секція Герой */
@@ -229,6 +295,11 @@ img {
   text-align: center;
 
   background-color: var(--dark-grey-color);
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/background-hero.jpg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .hero-title {
@@ -245,7 +316,8 @@ img {
 }
 
 .hero-button,
-.filter-button {
+.filter-button,
+.feature-picture {
   border-width: 0;
   border-radius: 4px;
   border-color: transparent;
@@ -280,6 +352,19 @@ img {
 
 .features-item:not(:last-child) {
   margin-right: 30px;
+}
+
+.feature-picture {
+  width: 270px;
+  height: 120px;
+  margin-bottom: 30px;
+  padding: 25px 100px;
+  background-color: var(--primary-background-color);
+}
+
+.benefits-icon {
+  width: 70px;
+  height: 70px;
 }
 
 .features-title {
@@ -319,12 +404,14 @@ img {
 /* Налаштування секції "Про команду" */
 
 .section-team {
-  background-color: var(--secondary-background-color);
+  background-color: var(--primary-background-color);
 }
 
 .team-item {
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 
   text-align: center;
 
@@ -336,8 +423,7 @@ img {
 }
 
 .team-wrapper {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding: 30px 32px;
 }
 
 .team-name {
@@ -350,11 +436,37 @@ img {
 }
 
 .team-position {
+  margin-bottom: 16px;
+
   font-size: 16px;
   line-height: 1.19;
   letter-spacing: 0.03em;
 
   color: var(--secondary-text-color);
+}
+
+/* Секція "Постійні клієнти" */
+
+.client-item {
+  margin-right: 30px;
+}
+
+.client-item:last-child {
+  margin-right: 0;
+}
+
+.client-picture {
+  width: 170px;
+  height: 92px;
+  padding: 16px 32px;
+  background-color: var(--light-grey-color);
+  border: 1px solid var(--soc-media-color);
+  border-radius: 4px;
+}
+
+.client-icon {
+  width: 106px;
+  height: 60px;
 }
 
 /* Налаштування <main> сторінки "Портфоліо" */
@@ -381,7 +493,7 @@ img {
   letter-spacing: 0.03em;
 
   color: inherit;
-  background-color: var(--secondary-background-color);
+  background-color: var(--primary-background-color);
 
   cursor: pointer;
 }
@@ -390,6 +502,8 @@ img {
 .filter-button:focus {
   color: var(--white-color);
   background-color: var(--blue-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .flex-wrap {
@@ -399,6 +513,12 @@ img {
 .portfolio-item {
   margin-right: 30px;
   margin-bottom: 30px;
+}
+
+.portfolio-item:hover,
+.portfolio-item:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .portfolio-item:nth-child(3n) {
