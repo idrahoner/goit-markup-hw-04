@@ -470,6 +470,7 @@ img {
 .client-link:hover,
 .client-link:focus {
   color: var(--blue-color);
+  border-color: var(--blue-color);
 }
 
 .client-icon {
