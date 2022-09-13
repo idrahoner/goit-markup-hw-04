@@ -178,7 +178,6 @@ img {
   padding-bottom: 32px;
 
   color: var(--secondary-text-color);
-  fill: var(--secondary-text-color);
 }
 
 .navigation-contacts:not(:last-child) {
@@ -187,6 +186,7 @@ img {
 
 .contacts-icon {
   margin-right: 10px;
+  fill: currentColor;
 }
 
 .navigation-link:hover,
@@ -206,6 +206,11 @@ img {
   padding-bottom: 60px;
 
   background-color: var(--dark-grey-color);
+}
+
+.footer-flex {
+  display: flex;
+  align-items: baseline;
 }
 
 .address-info {
@@ -233,10 +238,6 @@ img {
   color: var(--contacts-color);
 }
 
-.social-media {
-  padding-top: 12px;
-}
-
 .media-title {
   margin-bottom: 20px;
 
@@ -256,7 +257,9 @@ img {
 }
 
 .media-link {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 44px;
   height: 44px;
   padding: 12px;
@@ -290,15 +293,18 @@ img {
 /* Секція Герой */
 
 .hero {
+  max-width: 1600px;
   padding-top: 200px;
   padding-bottom: 200px;
+  margin: 0 auto;
+
   text-align: center;
 
   background-color: var(--dark-grey-color);
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url(../images/background-hero.jpg);
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -358,7 +364,9 @@ img {
   width: 270px;
   height: 120px;
   margin-bottom: 30px;
-  padding: 25px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--primary-background-color);
 }
 
@@ -456,11 +464,11 @@ img {
 }
 
 .client-link {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 170px;
   height: 92px;
-  padding: 16px 32px;
-  background-color: var(--light-grey-color);
   border: 1px solid var(--soc-media-color);
   border-radius: 4px;
 
@@ -480,9 +488,6 @@ img {
 }
 
 /* Налаштування <main> сторінки "Портфоліо" */
-.portfolio.section {
-  background-color: var(--primary-background-color);
-}
 
 .buttons {
   justify-content: center;
